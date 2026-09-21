@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-blue: #345DAB;
+    --secondary-cyan: #56ADE2;
+    --supporting-ice: #CAE2F1;
+    --clinical-bg: #F8FAFC;
+    --clinical-surface: #FFFFFF;
+    --clinical-ink: #0F1D33;
+    --clinical-muted: #5A6E85;
+    --clinical-border: #E1E8F0;
+    --clinical-dark: #0B1528;
+    --clinical-dark-surface: #10213A;
+  }
+
+  * {
+    border-color: var(--clinical-border);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: var(--clinical-ink);
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Display Font Styling for Mokoto vibe */
+.font-display {
+  font-family: 'Mokoto', var(--font-inter), -apple-system, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Subtle Diagnova Gradient */
+.bg-gradient-diagnova {
+  background: linear-gradient(135deg, #345DAB 0%, #56ADE2 100%);
+}
+
+.text-gradient-diagnova {
+  background: linear-gradient(120deg, #345DAB 10%, #56ADE2 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-light {
+  background: linear-gradient(120deg, #FFFFFF 20%, #CAE2F1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Clinical Scientific Grid Backgrounds */
+.grid-pattern-light {
+  background-image: 
+    linear-gradient(to right, rgba(52, 93, 171, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(52, 93, 171, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.grid-pattern-dark {
+  background-image: 
+    linear-gradient(to right, rgba(86, 173, 226, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(86, 173, 226, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scientific Dot Matrix Pattern */
+.dot-pattern {
+  background-image: radial-gradient(rgba(52, 93, 171, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Laboratory Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(202, 226, 241, 0.6);
+}
+
+.glass-panel-dark {
+  background: rgba(16, 33, 58, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(86, 173, 226, 0.2);
+}
+
+/* Custom Scrollbar for Clinical Data Tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Pulse animation for live specimen status indicators */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.96); }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
